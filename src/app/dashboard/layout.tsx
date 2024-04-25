@@ -1,7 +1,7 @@
-import NavBar from '@/component/dashboard/navbar/NavBar'
-import SideBar from '@/component/dashboard/sidebar/SideBar'
+import NavBar from '@/app/component/dashboard/navbar/NavBar'
+import SideBar from '@/app/component/dashboard/sidebar/SideBar'
 import React from 'react'
-import styles from "@/component/dashboard/dashboard.module.css"
+import styles from "@/app/component/dashboard/dashboard.module.css"
 
 const DashboardLayout = ({
     children,

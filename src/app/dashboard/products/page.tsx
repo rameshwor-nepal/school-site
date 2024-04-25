@@ -1,16 +1,17 @@
 import React from 'react'
-import styles from '@/component/product/product.module.css'
+import styles from '@/app/component/product/product.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import Search from '@/component/ui/search/Search'
-import Pagination from '@/component/ui/pagination/Pagination'
-import { fetchAllProducts } from '@/feature/product/productData'
+import Search from '@/app/component/ui/search/Search'
+import Pagination from '@/app/component/ui/pagination/Pagination'
+import { deleteProduct, fetchAllProducts } from '@/app/feature/product/productData'
 
 const ProductPage = async ({ searchParams }: any) => {
     const q = searchParams?.q || '';
     const page = searchParams?.page || 1;
 
     const { count, products } = await fetchAllProducts(q, page);
+    // console.log(products)
 
     return (
         <div className={styles.container}>
@@ -59,7 +60,7 @@ const ProductPage = async ({ searchParams }: any) => {
                                                 View
                                             </button>
                                         </Link>
-                                        <form action=''>
+                                        <form action={deleteProduct}>
                                             <input type="hidden" name="id" value={el.id} />
                                             <button className={`${styles.button} ${styles.delete}`}>
                                                 Delete

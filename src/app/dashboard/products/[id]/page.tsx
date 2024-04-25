@@ -1,5 +1,5 @@
-import styles from '@/component/product/singleProduct/singleProduct.module.css';
-import { fetchSingleProduct } from '@/feature/product/productData';
+import { fetchSingleProduct, updateProduct } from '@/app/feature/product/productData';
+import styles from '@/app/component/product/singleProduct/singleProduct.module.css';
 import Image from "next/image";
 
 const SingleProductPage = async ({ params }: any) => {
@@ -15,7 +15,7 @@ const SingleProductPage = async ({ params }: any) => {
                 {product?.title || '-'}
             </div>
             <div className={styles.formContainer}>
-                <form action='' className={styles.form}>
+                <form action={updateProduct} className={styles.form}>
                     <input type="hidden" name="id" value={product?.id || '-'} />
                     <label>Title</label>
                     <input type="text" name="title" placeholder={product?.title || '-'} />

@@ -1,9 +1,9 @@
-import Card from '@/component/dashboard/card/Card'
-import Chart from '@/component/dashboard/chart/Chart'
-import Transaction from '@/component/dashboard/transactions/Transaction'
+import Card from '@/app/component/dashboard/card/Card'
+import Chart from '@/app/component/dashboard/chart/Chart'
+import Transaction from '@/app/component/dashboard/transactions/Transaction'
 import React from 'react'
-import styles from '@/component/dashboard/dashboard.module.css'
-import RightBar from '@/component/dashboard/rightbar/RightBar'
+import styles from '@/app/component/dashboard/dashboard.module.css'
+import RightBar from '@/app/component/dashboard/rightbar/RightBar'
 
 const DashBoardPage = () => {
 

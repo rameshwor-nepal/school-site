@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from '@/component/users/user.module.css'
+import styles from '@/app/component/users/user.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import Search from '@/component/ui/search/Search'
-import Pagination from '@/component/ui/pagination/Pagination'
-import { fetchUser } from '@/feature/user/userData'
+import Search from '@/app/component/ui/search/Search'
+import Pagination from '@/app/component/ui/pagination/Pagination'
+import { deleteUser, fetchUser } from '@/app/feature/user/userData'
 
 const UserPage = async ({ searchParams }: any) => {
     const q = searchParams?.q || '';
@@ -58,7 +58,7 @@ const UserPage = async ({ searchParams }: any) => {
                                                     View
                                                 </button>
                                             </Link>
-                                            <form>
+                                            <form action={deleteUser}>
                                                 <input type="hidden" name="id" value={user.id} />
                                                 <button className={`${styles.button} ${styles.delete}`}>
                                                     Delete

@@ -1,22 +1,23 @@
-"use client"
+
 import React from 'react'
 import styles from './sidebar.module.css'
 
-import { menuItems } from '@/utils/MenuItems'
+import { menuItems } from '@/app/utils/MenuItems'
 import MenuList from './menu/MenuList'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
 import { MdLogout } from 'react-icons/md'
+import { auth, signOut } from '@/auth'
 
-const SideBar = () => {
-    const pathname = usePathname();
+const SideBar = async () => {
+    //@ts-ignore
+    const { user } = await auth();
     return (
         <div className={styles.container}>
             <div className={styles.user}>
-                <Image src={'/noavatar.png'} alt='user' width={50} height={50} />
+                <Image src={user?.img || '/noavatar.png'} alt='user' width={50} height={50} />
                 <div className={styles.userDetail}>
                     <span className={styles.username}>
-                        Mr.Adhil Adil
+                        {user?.username || ''}
                     </span>
                     <span className={styles.userTitle}>
                         Administrator
@@ -31,16 +32,22 @@ const SideBar = () => {
                                 {el.title}
                             </span>
                             {el?.list.map((item) => (
-                                <MenuList item={item} isActive={pathname === item.path} key={item.title} />
+                                <MenuList item={item} key={item.title} />
                             ))}
                         </li>
                     )
                 }
                 )}
             </ul>
-            <div className={styles.logout}>
-                <MdLogout /> Logout
-            </div>
+            <form action={async () => {
+                "use server"
+                await signOut();
+            }}>
+                <div className={styles.logout}>
+                    <MdLogout />
+                    Logout
+                </div>
+            </form>
         </div>
     )
 }
