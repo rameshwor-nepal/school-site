@@ -4,8 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Search from '@/component/ui/search/Search'
 import Pagination from '@/component/ui/pagination/Pagination'
+import { fetchAllProducts } from '@/feature/product/productData'
 
-const ProductPage = () => {
+const ProductPage = async ({ searchParams }: any) => {
+    const q = searchParams?.q || '';
+    const page = searchParams?.page || 1;
+
+    const { count, products } = await fetchAllProducts(q, page);
+
     return (
         <div className={styles.container}>
             <div className={styles.top}>
@@ -26,42 +32,52 @@ const ProductPage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr key={1}>
-                        <td>
-                            <div className={styles.product}>
-                                <Image
-                                    src={"/noproduct.jpg"}
-                                    alt=""
-                                    width={40}
-                                    height={40}
-                                    className={styles.productImage}
-                                />
-                                {'New Arrival'}
-                            </div>
-                        </td>
-                        <td>{'it is new product out here which is loved by almost every customers'}</td>
-                        <td>$12</td>
-                        <td>12/12/2222</td>
-                        <td>Yes</td>
-                        <td>
-                            <div className={styles.buttons}>
-                                <Link href={`/dashboard/products/${1}`}>
-                                    <button className={`${styles.button} ${styles.view}`}>
-                                        View
-                                    </button>
-                                </Link>
-                                <form action=''>
-                                    <input type="hidden" name="id" value={1} />
-                                    <button className={`${styles.button} ${styles.delete}`}>
-                                        Delete
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
+                    {
+                        // products?.length > 0 ? (
+                        products.map((el) => (
+                            <tr key={el.id}>
+                                <td>
+                                    <div className={styles.product}>
+                                        <Image
+                                            src={el?.img || "/noproduct.jpg"}
+                                            alt=""
+                                            width={40}
+                                            height={40}
+                                            className={styles.productImage}
+                                        />
+                                        {el.title}
+                                    </div>
+                                </td>
+                                <td>{el.desc}</td>
+                                <td>{el.price}</td>
+                                <td>{el?.createdAt?.toString().slice(4, 16) || '-'}</td>
+                                <td>{el.stock}</td>
+                                <td>
+                                    <div className={styles.buttons}>
+                                        <Link href={`/dashboard/products/${el.id}`}>
+                                            <button className={`${styles.button} ${styles.view}`}>
+                                                View
+                                            </button>
+                                        </Link>
+                                        <form action=''>
+                                            <input type="hidden" name="id" value={el.id} />
+                                            <button className={`${styles.button} ${styles.delete}`}>
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        )
+                        )
+                        // ) : (
+                        //     <div className={styles.norecord}>No record Found</div>
+                        // )
+                    }
+
                 </tbody>
             </table>
-            <Pagination count={'1'} />
+            <Pagination count={count} />
         </div>
     )
 }

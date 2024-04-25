@@ -4,10 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Search from '@/component/ui/search/Search'
 import Pagination from '@/component/ui/pagination/Pagination'
-import { fetchUser } from '@/utils/data'
+import { fetchUser } from '@/feature/user/userData'
 
-const UserPage = async () => {
-    const users = await fetchUser();
+const UserPage = async ({ searchParams }: any) => {
+    const q = searchParams?.q || '';
+    const page = searchParams?.page || 1;
+    const { count, users } = await fetchUser(q, page);
+
     return (
         <div className={styles.container}>
             <div className={styles.top}>
@@ -28,45 +31,52 @@ const UserPage = async () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users?.map((user) => (
-                        <tr key={user.id}>
-                            <td>
-                                <div className={styles.user}>
-                                    <Image
-                                        src={user.img || "/noavatar.png"}
-                                        alt=""
-                                        width={40}
-                                        height={40}
-                                        className={styles.userImage}
-                                    />
-                                    {user.username}
-                                </div>
-                            </td>
-                            <td>{user.email}</td>
-                            <td>{user?.createdAt?.toString().slice(4, 16) || '-'}</td>
-                            <td>{user.isAdmin ? "Admin" : "Client"}</td>
-                            <td>{user.isActive ? "Active" : "Passive"}</td>
-                            <td>
-                                <div className={styles.buttons}>
-                                    <Link href={`/dashboard/users/${user.id}}`}>
-                                        <button className={`${styles.button} ${styles.view}`}>
-                                            View
-                                        </button>
-                                    </Link>
-                                    <form>
-                                        <input type="hidden" name="id" value={user.id} />
-                                        <button className={`${styles.button} ${styles.delete}`}>
-                                            Delete
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
+                    {
+                        users.length > 0 ?
+                            users?.map((user) => (
+                                <tr key={user.id}>
+                                    <td>
+                                        <div className={styles.user}>
+                                            <Image
+                                                src={user.img || "/noavatar.png"}
+                                                alt=""
+                                                width={40}
+                                                height={40}
+                                                className={styles.userImage}
+                                            />
+                                            {user.username}
+                                        </div>
+                                    </td>
+                                    <td>{user.email}</td>
+                                    <td>{user?.createdAt?.toString().slice(4, 16) || '-'}</td>
+                                    <td>{user.isAdmin ? "Admin" : "Client"}</td>
+                                    <td>{user.isActive ? "Active" : "Passive"}</td>
+                                    <td>
+                                        <div className={styles.buttons}>
+                                            <Link href={`users/${user.id}`}>
+                                                <button className={`${styles.button} ${styles.view}`}>
+                                                    View
+                                                </button>
+                                            </Link>
+                                            <form>
+                                                <input type="hidden" name="id" value={user.id} />
+                                                <button className={`${styles.button} ${styles.delete}`}>
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))
+                            : (
+                                <p className={styles.noRecord}>No Record Found</p>
+                            )
+                    }
+
 
                 </tbody>
             </table>
-            <Pagination count={'1'} />
+            <Pagination count={count} />
         </div>
     )
 }

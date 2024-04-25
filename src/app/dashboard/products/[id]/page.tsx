@@ -1,9 +1,10 @@
 import styles from '@/component/product/singleProduct/singleProduct.module.css';
+import { fetchSingleProduct } from '@/feature/product/productData';
 import Image from "next/image";
 
 const SingleProductPage = async ({ params }: any) => {
     const { id } = params;
-    //   const product = await fetchProduct(id);
+    const product = await fetchSingleProduct(id);
 
     return (
         <div className={styles.container}>
@@ -11,27 +12,27 @@ const SingleProductPage = async ({ params }: any) => {
                 <div className={styles.imgContainer}>
                     <Image src="/noavatar.png" alt="" fill />
                 </div>
-                {/* {product.title} */} Title
+                {product?.title || '-'}
             </div>
             <div className={styles.formContainer}>
                 <form action='' className={styles.form}>
-                    <input type="hidden" name="id" value={1} />
+                    <input type="hidden" name="id" value={product?.id || '-'} />
                     <label>Title</label>
-                    <input type="text" name="title" placeholder={'hello'} />
+                    <input type="text" name="title" placeholder={product?.title || '-'} />
                     <label>Price</label>
-                    <input type="number" name="price" placeholder={'100'} />
+                    <input type="number" name="price" placeholder={product?.price.toString() || '-'} />
                     <label>Stock</label>
-                    <input type="number" name="stock" placeholder={'yes'} />
+                    <input type="number" name="stock" placeholder={product?.stock.toString() || '-'} />
                     <label>Color</label>
                     <input
                         type="text"
                         name="color"
-                        placeholder={"color"}
+                        placeholder={product?.color || '-'}
                     />
                     <label>Size</label>
                     <textarea
                         name="size"
-                        placeholder={"size"}
+                        placeholder={product?.size || '-'}
                     />
                     <label>Cat</label>
                     <select name="cat" id="cat">
@@ -43,7 +44,7 @@ const SingleProductPage = async ({ params }: any) => {
                         name="desc"
                         id="desc"
                         rows={10}
-                        placeholder={' hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello'}
+                        placeholder={product?.desc || '-'}
                     ></textarea>
                     <button>Update</button>
                 </form>

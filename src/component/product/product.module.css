@@ -59,3 +59,8 @@
 .delete {
     background-color: crimson;
 }
+
+.norecord {
+    font-size: 16px;
+    color: red;
+}

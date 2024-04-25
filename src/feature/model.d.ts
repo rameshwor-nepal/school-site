@@ -9,10 +9,11 @@ interface UserI {
     phone: string | number;
     address: string;
     createdAt?: Date;
-    updatedAt?: string;
+    updatedAt?: Date;
 }
 
 interface ProductI {
+    id?: string
     title: string;
     desc: string;
     price: number;
@@ -20,6 +21,6 @@ interface ProductI {
     color: string;
     size: string;
     img: string;
-    createdAt?: string;
-    updatedAt?: string;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
