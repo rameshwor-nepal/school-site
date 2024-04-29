@@ -1,11 +1,17 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './loginForm.module.css'
 import { authenticate } from '@/app/feature/auth/authAction'
 import { useFormState } from 'react-dom'
+import { useRouter } from 'next/navigation'
 
 const LoginForm = () => {
-    const [state, formAction] = useFormState(authenticate, undefined)
+    const router = useRouter()
+    const [state, formAction] = useFormState(authenticate, undefined);
+
+    if (state === "Success") {
+        router.push('/dashboard')
+    }
 
     return (
         <form action={formAction} className={styles.form}>
@@ -14,7 +20,7 @@ const LoginForm = () => {
             <input type="password" placeholder="password" name="password" />
             <button>Login</button>
             <p>
-                {state && state}
+                {typeof state === 'string' && state}
             </p>
         </form>
     )

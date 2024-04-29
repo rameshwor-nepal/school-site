@@ -2,7 +2,7 @@ import { connectDb } from "@/app/utils/DbConnect";
 import { User } from "../models";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
+import bcrypt from "bcrypt";
 
 export const fetchUser = async (q: string, page: number) => {
     const regex = new RegExp(q, 'i')
@@ -39,15 +39,18 @@ export const addUser = async (formData: FormData) => {
 
     try {
         connectDb();
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password.toString(), salt);
+
         const newUser = new User({
             username,
             email,
-            password,
+            password: hashedPassword,
             phone,
             address,
             isAdmin,
-            isActive
-        })
+            isActive,
+        });
         await newUser.save();
     }
     catch (error: any) {
