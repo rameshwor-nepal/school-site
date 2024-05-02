@@ -63,10 +63,22 @@ export const getUserData = async () => {
         connectDb();
         const userId = await getDataFromToken();
         const user = await User.findOne({ _id: userId }).select("-password")
-        console.log("user data", user)
         return user
     }
     catch (err: any) {
-        throw new Error(err.message)
+        console.log(err)
+    }
+}
+
+export const userLogout = async () => {
+    try {
+        cookies().set("token", "", {
+            httpOnly: true,
+            expires: new Date(0)
+        });
+        return "Logout successful";
+    }
+    catch (error) {
+
     }
 }
