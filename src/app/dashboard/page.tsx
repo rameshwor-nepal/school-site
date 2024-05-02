@@ -5,8 +5,7 @@ import React from 'react'
 import styles from '@/app/component/dashboard/dashboard.module.css'
 import RightBar from '@/app/component/dashboard/rightbar/RightBar'
 
-const DashBoardPage = () => {
-
+const DashBoardPage = async () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.main}>

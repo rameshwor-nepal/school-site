@@ -6,17 +6,17 @@ import { menuItems } from '@/app/utils/MenuItems'
 import MenuList from './menu/MenuList'
 import Image from 'next/image'
 import { MdLogout } from 'react-icons/md'
+import { getUserData } from '@/app/feature/auth/authAction'
 
 const SideBar = async () => {
-    //@ts-ignore
-    // const { user } = await auth();
+    const user = await getUserData();
     return (
         <div className={styles.container}>
             <div className={styles.user}>
                 <Image src={'/noavatar.png'} alt='user' width={50} height={50} />
                 <div className={styles.userDetail}>
                     <span className={styles.username}>
-                        {/* {user?.username || ''} */} Heshsa
+                        {user?.username || 'user name'}
                     </span>
                     <span className={styles.userTitle}>
                         Administrator

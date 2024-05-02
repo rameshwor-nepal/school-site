@@ -4,9 +4,8 @@ import { connectDb } from "@/app/utils/DbConnect";
 import { User } from "../models";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken"
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { cookies } from 'next/headers'
-import { redirect } from "next/navigation";
 
 export const authenticate = async (
     prevState: NextResponse<{ message: string; success: boolean; }> | string | undefined,
@@ -44,6 +43,30 @@ export const authenticate = async (
             return "Wrong password";
         }
         console.log(err)
-        return "Something went wrong";
+        return err.message;
+    }
+}
+
+export const getDataFromToken = () => {
+    try {
+        const token = cookies().get("token")?.value || '';
+        const decodedToken: any = jwt.verify(token, process.env.TOKEN_SECRET!);
+        return decodedToken?.id
+    }
+    catch (err: any) {
+        throw new Error(err.message);
+    }
+}
+
+export const getUserData = async () => {
+    try {
+        connectDb();
+        const userId = await getDataFromToken();
+        const user = await User.findOne({ _id: userId }).select("-password")
+        console.log("user data", user)
+        return user
+    }
+    catch (err: any) {
+        throw new Error(err.message)
     }
 }

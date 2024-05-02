@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './loginForm.module.css'
 import { authenticate } from '@/app/feature/auth/authAction'
 import { useFormState } from 'react-dom'
@@ -9,9 +9,11 @@ const LoginForm = () => {
     const router = useRouter()
     const [state, formAction] = useFormState(authenticate, undefined);
 
-    if (state === "Success") {
-        router.push('/dashboard')
-    }
+    useEffect(() => {
+        if (state === "Success") {
+            router.push('/dashboard')
+        }
+    }, [state, router])
 
     return (
         <form action={formAction} className={styles.form}>
