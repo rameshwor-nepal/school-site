@@ -88,7 +88,7 @@ const Footer = () => {
                         <span> Copyright 2023 - All rights reserved. Designed By
                         </span>
                         <a href="#" className='underline ml-1'>
-                            Uptech Solutions
+                            rNepal Solution
                         </a>
                     </div>
                     <div className='flex gap-5'>
