@@ -24,7 +24,6 @@ module.exports = {
           2: '#878f9f',
           3: '#d7d7d9',
         },
-        white: '#ffffff'
       },
       lineHeight: {
         'extra-tight': '1.15',

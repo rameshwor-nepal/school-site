@@ -3,7 +3,7 @@ import { MdArrowForward } from 'react-icons/md'
 
 const Services = () => {
     return (
-        <main className=' relative'>
+        <main className='text-gray-1 relative'>
             <div className='flex w-full h-[50rem] absolute z-[-10]'>
                 <div className='bg-white flex-1'></div>
                 <div className='bg-[#f9faff] flex-1 h-[40rem]'></div>

@@ -1,24 +1,35 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Contact = () => {
     return (
-        <section className='relative'>
-            <div className="bg-[linear-gradient(to_bottom,rgba(22,33,84,0.8),rgba(55,92,157,0.9)),url('/p5.jpg')] w-full h-[28rem] py-16" style={{ backgroundSize: 'cover', backgroundPosition: "center" }}>
-                <div className='text-center'>
-                    <div className='flex items-center gap-3 lg:ml-[40%] sm:ml-[30%] ml-[20%]' data-aos="fade-right" data-aos-duration="500">
-                        <span className='text-cyan-1 text-lg'>Have some work with us? </span>
-                        <p className='w-20 h-[2px] bg-cyan-1 '></p>
+        <section className='relative mb-9 md:mb-0'>
+            <div className="w-full h-[28rem] py-16 relative">
+                <div className='absolute inset-0 z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.8),rgba(55,92,157,0.9))]'></div>
+                <Image
+                    src={'/p5.jpg'}
+                    alt='hero image'
+                    fill
+                    className='object-cover'
+                />
+                <div className='absolute z-20 ml-[20%]'>
+                    <div className='text-center'>
+                        <div className='flex items-center gap-3 lg:ml-[40%] sm:ml-[30%] ml-[20%]' data-aos="fade-right" data-aos-duration="500">
+                            <span className='text-cyan-1 text-lg'>Have some work with us? </span>
+                            <p className='w-20 h-[2px] bg-cyan-1 '></p>
+                        </div>
+                        <h1 className='lg:text-6xl text-4xl text-white font-extrabold leading-extra-tight my-3'>
+                            Request A Quote Today
+                        </h1>
+                        <p className='text-white text-lg'>
+                            Please contact us with all your water needs. We look forward to serving you.
+                        </p>
                     </div>
-                    <h1 className='lg:text-6xl text-4xl text-white font-extrabold leading-extra-tight my-3'>
-                        Request A Quote Today
-                    </h1>
-                    <p className='text-white text-lg'>
-                        Please contact us with all your water needs. We look forward to serving you.
-                    </p>
                 </div>
             </div>
-            <div className='flex flex-col lg:flex-row lg:gap-20 gap-10 xl:px-32 lg:px-24 sm:px-12 px-12 lg:my-10 sm:my-6 my-4 '>
-                <section className="bg-gray-100 w-full flex-1 shadow-[8px_8px_0px_0px_rgba(84,219,255)] mt-[-10rem] h-fit">
+
+            <div className='flex flex-col bg-slate-50 lg:flex-row lg:gap-20 gap-10 xl:px-32 lg:px-24 sm:px-12 px-12 '>
+                <section className="bg-gray-100 w-full z-30 flex-1 shadow-[8px_8px_0px_0px_rgba(84,219,255)] mt-[-10rem] h-fit">
                     <div className=" bg-white p-8 shadow-lg  lg:p-12 border-2 border-gray-3 border-solid">
                         <h1 className='lg:text-3xl text-2xl text-blue-2 font-extrabold leading-extra-tight my-6'>
                             Request A Free Quote
@@ -113,7 +124,7 @@ const Contact = () => {
                         <h2 className='text-xl text-blue-2 font-extrabold leading-extra-tight py-4'>
                             Area Covered
                         </h2>
-                        <p className='flex flex-col '>
+                        <p className='flex flex-col text-gray-1 '>
                             <span>LaPorte Countries</span>
                             <span>Porter Countries</span>
                             <span>Michigan City</span>

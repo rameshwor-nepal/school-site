@@ -4,6 +4,7 @@ import { FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
 import { MdArrowForward, MdMenu } from 'react-icons/md'
 import Carousel from './ui/Carousel'
 import { ImCross } from 'react-icons/im'
+import Image from 'next/image'
 
 const HeroSection = () => {
     const [isMobileNavBar, setIsMobileNavBar] = useState<boolean>(false)
@@ -29,61 +30,70 @@ const HeroSection = () => {
                 </div>
             </section>
 
-            <section className=' grid grid-cols-12 grid-rows-12 relative'>
-                <div className="col-span-12 row-span-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.9),rgba(55,92,157,0.6)),url('/plumbing-home.jpg')]  text-white" style={{ backgroundSize: 'cover' }}>
-                    <nav className="lg:px-14 px-10 py-6 flex justify-between items-center">
-                        <div className="">
-                            <span className="text-xl sm:text-2xl lg:text-3xl tracking-wider font-medium">Business Logo</span>
-                        </div>
-                        <div className='hidden sm:block'>
-                            <ul className="flex gap-5 no-underline">
-                                <li>
-                                    Home
-                                </li>
-                                <li>
-                                    About
-                                </li>
-                                <li>
-                                    Projects
-                                </li>
-                                <li>
-                                    Services
-                                </li>
-                                <li>
-                                    Contact
-                                </li>
-                            </ul>
-                        </div>
+            <section className='  grid grid-cols-12 grid-rows-12 relative'>
+                <div className="col-span-12 row-span-10 h-screen text-white relative">
+                    <div className='absolute h-full w-full z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.9),rgba(55,92,157,0.6))]'></div>
+                    <Image
+                        src={'/plumbing-home.jpg'}
+                        alt='hero image'
+                        fill
+                        className='object-cover'
+                    />
+                    <div className='absolute z-20'>
+                        <nav className="lg:px-14 px-10 py-6 flex justify-between items-center">
+                            <div className="">
+                                <span className="text-xl sm:text-2xl lg:text-3xl tracking-wider font-medium">Business Logo</span>
+                            </div>
+                            <div className='hidden sm:block '>
+                                <ul className="flex gap-5 cursor-pointer no-underline">
+                                    <li>
+                                        Home
+                                    </li>
+                                    <li>
+                                        About
+                                    </li>
+                                    <li>
+                                        Projects
+                                    </li>
+                                    <li>
+                                        Services
+                                    </li>
+                                    <li>
+                                        Contact
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div className='block sm:hidden cursor-pointer' onClick={() => setIsMobileNavBar(true)}>
-                            <MdMenu size={50} />
-                        </div>
-                    </nav>
-                    <div className=" flex justify-between items-center mt-24  xl:px-32 lg:px-24 sm:px-16 px-12">
-                        <div className="w-[39rem]">
-                            <p className="md:pb-4 pb-3 text-lg">
-                                Building with Confidence
-                            </p>
-                            <h1
-                                className="text-5xl md:text-[80px] lg:text-[90px] leading-extra-tight font-bold"
-                                data-aos="fade-right" data-aos-duration="500"
-                            >
-                                Building and Maintaining Your Dreams
-                            </h1>
-                            <p>
-                                Fast, Friendly home repair service done right the first time!!
-                            </p>
-                            <button
-                                className="md:py-5 md:px-10 py-4 px-8 text-lg bg-white text-blue-2 font-bold flex items-center gap-2 mt-8 mb-20"
-                                data-aos="fade-right" data-aos-duration="500"
-                            >
-                                <span>
-                                    Expore More
-                                </span>
-                                <span>
-                                    <MdArrowForward size={20} />
-                                </span>
-                            </button>
+                            <div className='block sm:hidden cursor-pointer' onClick={() => setIsMobileNavBar(true)}>
+                                <MdMenu size={50} />
+                            </div>
+                        </nav>
+                        <div className=" flex justify-between  items-center mt-24  xl:px-32 lg:px-24 sm:px-16 px-12">
+                            <div className="w-[39rem]">
+                                <p className="md:pb-4 pb-3 text-lg">
+                                    Building with Confidence
+                                </p>
+                                <h1
+                                    className="text-5xl md:text-[80px] lg:text-[90px] leading-extra-tight font-bold"
+                                    data-aos="fade-right" data-aos-duration="500"
+                                >
+                                    Building and Maintaining Your Dreams
+                                </h1>
+                                <p>
+                                    Fast, Friendly home repair service done right the first time!!
+                                </p>
+                                <button
+                                    className="md:py-5 md:px-10 py-4 px-8 text-lg bg-white text-blue-2 font-bold flex items-center gap-2 mt-8 mb-20"
+                                    data-aos="fade-right" data-aos-duration="500"
+                                >
+                                    <span>
+                                        Expore More
+                                    </span>
+                                    <span>
+                                        <MdArrowForward size={20} />
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
