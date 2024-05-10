@@ -46,21 +46,32 @@ const HeroSection = () => {
                             </div>
                             <div className='hidden sm:block '>
                                 <ul className="flex gap-5 cursor-pointer no-underline">
-                                    <li>
-                                        Home
-                                    </li>
-                                    <li>
-                                        About
-                                    </li>
-                                    <li>
-                                        Projects
-                                    </li>
-                                    <li>
-                                        Services
-                                    </li>
-                                    <li>
-                                        Contact
-                                    </li>
+                                    <a href="/">
+                                        <li>
+                                            Home
+                                        </li>
+                                    </a>
+                                    <a href="/about">
+                                        <li>
+                                            About
+                                        </li>
+                                    </a>
+                                    <a href="/projects">
+                                        <li>
+                                            Projects
+                                        </li>
+                                    </a>
+                                    <a href="/services">
+                                        <li>
+                                            Services
+                                        </li>
+                                    </a>
+                                    <a href="/contact">
+                                        <li>
+                                            Contact
+                                        </li>
+                                    </a>
+
                                 </ul>
                             </div>
 
