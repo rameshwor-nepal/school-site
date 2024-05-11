@@ -14,7 +14,7 @@ const SubHeader = ({ subTitle, img }: PropI) => {
 
     return (
         <div className='h-96 w-full bg-blue-200 relative'>
-            <div className='absolute h-full w-full z-10 bg-[linear-gradient(to_bottom,rgba(55,92,157,0.7),rgba(22,33,84,0.8))]'></div>
+            <div className='absolute h-full w-full z-10 bg-[linear-gradient(to_bottom,rgba(55,92,157,0.1),rgba(22,33,84,0.8))]'></div>
             <Image
                 src={`/${img}`}
                 alt='hero image'
