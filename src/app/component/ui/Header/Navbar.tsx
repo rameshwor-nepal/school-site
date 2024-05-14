@@ -23,16 +23,22 @@ const Navbar = () => {
                                 About
                             </li>
                         </a>
-                        <a href="/projects">
+                        <a href="/facilities">
                             <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
-                                Projects
+                                Facilities
                             </li>
                         </a>
-                        <a href="/services">
+                        <a href="/program">
                             <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
-                                Services
+                                Program
                             </li>
                         </a>
+                        <a href="/gallery">
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
+                                Gallery
+                            </li>
+                        </a>
+
                         <a href="/contact">
                             <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
                                 Contact
@@ -63,10 +69,13 @@ const Navbar = () => {
                                 About
                             </li>
                             <li className="hover:scale-105 transition">
-                                Projects
+                                Facilities
                             </li>
                             <li className="hover:scale-105 transition">
-                                Services
+                                Program
+                            </li>
+                            <li className="hover:scale-105 transition">
+                                Gallery
                             </li>
                             <li className="hover:scale-105 transition">
                                 Contact

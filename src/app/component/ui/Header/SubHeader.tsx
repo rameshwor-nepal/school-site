@@ -19,7 +19,7 @@ const SubHeader = ({ subTitle, img }: PropI) => {
                 src={`/${img}`}
                 alt='hero image'
                 fill
-                className='object-fill bg-center'
+                className='object-cover bg-center'
             />
             <div className='absolute z-20 text-white bottom-16 left-16'>
                 <h6 className='text-xl font-normal mb-3 text-cyan-1'>{subTitle}</h6>

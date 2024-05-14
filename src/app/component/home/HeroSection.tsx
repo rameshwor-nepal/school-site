@@ -56,16 +56,22 @@ const HeroSection = () => {
                                             About
                                         </li>
                                     </a>
-                                    <a href="/projects">
+                                    <a href="/facilities">
                                         <li>
-                                            Projects
+                                            Facilities
                                         </li>
                                     </a>
-                                    <a href="/services">
+                                    <a href="/program">
                                         <li>
-                                            Services
+                                            Program
                                         </li>
                                     </a>
+                                    <a href="/gallery">
+                                        <li>
+                                            Gallery
+                                        </li>
+                                    </a>
+
                                     <a href="/contact">
                                         <li>
                                             Contact
@@ -139,10 +145,13 @@ const HeroSection = () => {
                                 About
                             </li>
                             <li>
+                                Facilities
+                            </li>
+                            <li>
                                 Projects
                             </li>
                             <li>
-                                Services
+                                Gallery
                             </li>
                             <li>
                                 Contact
