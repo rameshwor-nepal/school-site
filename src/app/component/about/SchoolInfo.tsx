@@ -5,10 +5,11 @@ import { PiTargetBold } from 'react-icons/pi'
 import { GiBoltEye } from 'react-icons/gi'
 
 import { Certificate } from './Certificate'
+import FAQ from './FAQ'
 
 const SchoolInfo = () => {
     return (
-        <main className='mb-20 '>
+        <main className='mb-12 '>
             {/* history section */}
             <section className='grid md:grid-cols-3 grid-cols-1 gap-8 xl:px-32 md:px-24 px-12 py-12 h-[20rem]'>
                 <div>
@@ -120,6 +121,114 @@ const SchoolInfo = () => {
                     <Certificate />
                 </div>
             </section>
+
+            {/* discover our school */}
+            <section className="relative min-h-screen max-h-fit w-full xl:px-32 md:px-24 px-12 text-center md:py-7 lg:py-14 sm:py-14 py-6 overflow-hidden">
+                <div className='absolute inset-0 z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.8),rgba(22,33,84,0.8))]'></div>
+                <Image
+                    src={'/school.jpg'}
+                    alt='hero image'
+                    fill
+                    className='object-fill bg-center'
+                />
+                <div className='absolute z-20 w-[85%]  text-white'>
+                    <div className='flex flex-col gap-12 items-center'>
+                        <h1 className='text-3xl text-cyan-1 font-bold px-1 '>
+                            Discover Our Business
+                        </h1>
+                        <h6 className='text-lg leading-6 max-w-[50rem]'>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam culpa corporis sit nulla ad, minima ut possimus magnam
+                            porro voluptatum at accusamus debitis expedita quaerat unde deserunt, magni, asperiores dignissimos?
+                        </h6>
+                        <div className='w-full pt-4 grid grid-cols-4 items-center  gap-x-8 gap-y-[68px]'>
+                            <div className='col-span-4 md:col-span-2 lg:col-span-1'>
+                                <div className='w-full h-[10rem] relative'>
+                                    <Image
+                                        src={'/plumbing-home.jpg'}
+                                        alt='hero image'
+                                        fill
+                                        className='object-cover rounded-xl'
+                                    />
+                                    <div className='px-5 py-4 absolute bottom-[-30px] right-[20%] border-b-8 border-cyan-1 bg-slate-50 text-blue-1'>
+                                        <h2 className='text-xl font-semibold'>Extra Curricular</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-span-4 md:col-span-2 lg:col-span-1'>
+                                <div className='w-full h-[10rem] relative'>
+                                    <Image
+                                        src={'/p6.jpg'}
+                                        alt='hero image'
+                                        fill
+                                        className='object-cover rounded-xl'
+                                    />
+                                    <div className='px-5 py-4 absolute bottom-[-30px] right-[20%] border-b-8 border-cyan-1 bg-slate-50 text-blue-1'>
+                                        <h2 className='text-xl font-semibold'>Extra Curricular</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-span-4 md:col-span-2 lg:col-span-1'>
+                                <div className='w-full h-[10rem] relative'>
+                                    <Image
+                                        src={'/p5.jpg'}
+                                        alt='hero image'
+                                        fill
+                                        className='object-cover rounded-xl'
+                                    />
+                                    <div className='px-5 py-4 absolute bottom-[-30px] right-[20%] border-b-8 border-cyan-1 bg-slate-50 text-blue-1'>
+                                        <h2 className='text-xl font-semibold'>Extra Curricular</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-span-4 md:col-span-2 lg:col-span-1'>
+                                <div className='w-full h-[10rem] relative'>
+                                    <Image
+                                        src={'/p5.jpg'}
+                                        alt='hero image'
+                                        fill
+                                        className='object-cover rounded-xl'
+                                    />
+                                    <div className='px-5 py-4 absolute bottom-[-30px] right-[20%] border-b-8 border-cyan-1 bg-slate-50 text-blue-1'>
+                                        <h2 className='text-xl font-semibold'>Extra Curricular</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-span-4 md:col-span-2 lg:col-span-1'>
+                                <div className='w-full h-[10rem] relative'>
+                                    <Image
+                                        src={'/p5.jpg'}
+                                        alt='hero image'
+                                        fill
+                                        className='object-cover rounded-xl'
+                                    />
+                                    <div className='px-5 py-4 absolute bottom-[-30px] right-[20%] border-b-8 border-cyan-1 bg-slate-50 text-blue-1'>
+                                        <h2 className='text-xl font-semibold'>Extra Curricular</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-span-4 md:col-span-2 lg:col-span-1'>
+                                <div className='w-full h-[10rem] relative'>
+                                    <Image
+                                        src={'/p5.jpg'}
+                                        alt='hero image'
+                                        fill
+                                        className='object-cover rounded-xl'
+                                    />
+                                    <div className='px-5 py-4 absolute bottom-[-30px] right-[20%] border-b-8 border-cyan-1 bg-slate-50 text-blue-1'>
+                                        <h2 className='text-xl font-semibold'>Extra Curricular</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            {/* faq section */}
+            <div className="relative h-fit w-full xl:px-32 md:px-24 px-12 text-center md:py-7 lg:py-14 sm:py-14 py-6 overflow-hidden">
+                <FAQ />
+            </div>
         </main>
     )
 }
