@@ -22,13 +22,14 @@ module.exports = {
           1: '#162154',
           2: '#375c9d',
           3: '#267fe0',
+          4: "#f2f8ff",
         },
         cyan: {
           1: "#34d6ff",
         },
         gray: {
           1: '#2c262e',
-          2: '#878f9f',
+          2: '#4d5054',
           3: '#d7d7d9',
         },
         border: "hsl(var(--border))",
