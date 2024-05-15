@@ -1,13 +1,31 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { FaNewspaper, FaQuoteLeft } from 'react-icons/fa6'
+import { FaNewspaper } from 'react-icons/fa6'
 import { PiTargetBold } from 'react-icons/pi'
 import { GiBoltEye } from 'react-icons/gi'
-
 import { Certificate } from './Certificate'
 import FAQ from './FAQ'
 
-const SchoolInfo = () => {
+interface PropI {
+    schoolHistory: {
+        data: SchoolHistoryI[];
+        message: string;
+    }
+}
+const SchoolInfo = ({ schoolHistory }: PropI) => {
+    const [historyData, setHistoryData] = useState<SchoolHistoryI | null>(null)
+
+    useEffect(() => {
+        if (schoolHistory) {
+            setHistoryData(schoolHistory.data[0])
+
+        } else {
+            console.log('Failed to fetch school history data:', schoolHistory);
+        }
+    }, []);
+
+
     return (
         <main className='mb-12 '>
             {/* history section */}
@@ -18,20 +36,15 @@ const SchoolInfo = () => {
                     </h1>
                 </div>
                 <p className='h-full w-full overflow-hidden text-lg'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur tenetur aperiam, ullam porro, consequatur
-                    exercitationem, sint facere fugiat a odio libero debitis maxime nemo dolorem voluptas ipsum vero! Laboriosam,
-                    corrupti. Exercitationem, sint facere fugiat a odio libero debitis maxime nemo dolorem voluptas ipsum vero!
-                    Laboriosam.
+                    {historyData?.history.slice(0, 350)}
                 </p>
-                <p className='h-full w-full overflow-hidden text-lg'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur tenetur aperiam, ullam porro, consequatur
-                    exercitationem, sint facere fugiat a odio libero debitis maxime nemo dolorem.Exercitationem, sint facere fugiat a odio libero debitis maxime nemo dolorem voluptas ipsum vero!
-                    Laboriosam.
+                <p className='h-full w-full overflow-hidden text-lg line-clamp-[8]'>
+                    {historyData?.history.slice(350)}
                 </p>
             </section>
 
             {/* mission, vision and objective section */}
-            <section className="relative h-[28rem] w-full xl:px-32 md:px-24 px-12 md:py-7 lg:py-14 sm:py-14 py-6 overflow-hidden">
+            <section className="relative h-[30rem] w-full xl:px-32 md:px-24 px-12 md:py-7 lg:py-14 sm:py-14 py-6 overflow-hidden">
                 <div className='absolute inset-0 z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.8),rgba(22,33,84,0.8))]'></div>
                 <Image
                     src={'/school.jpg'}
@@ -40,7 +53,7 @@ const SchoolInfo = () => {
                     className='object-fill bg-center'
                 />
                 <div className='absolute z-20 h-full'>
-                    <div className=' flex flex-col md:flex-row items-center gap-10'>
+                    <div className=' flex flex-col md:flex-row items-start gap-10'>
                         <div className='flex flex-col gap-6 p-4 max-w-[28rem] text-white'>
                             <i>
                                 <FaNewspaper size={40} />
@@ -48,10 +61,8 @@ const SchoolInfo = () => {
                             <h2 className='text-3xl text-cyan-1 font-bold'>
                                 School Mission
                             </h2>
-                            <p className='text-lg min-h-48 overflow-hidden'>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
-                                Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                                Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
+                            <p className='text-lg max-h-56 overflow-hidden line-clamp-[8]'>
+                                {historyData?.mission}
                             </p>
                         </div>
                         <div className='flex flex-col gap-6 p-4 max-w-[28rem] text-white'>
@@ -61,9 +72,8 @@ const SchoolInfo = () => {
                             <h2 className='text-3xl text-cyan-1 font-bold'>
                                 School Vision
                             </h2>
-                            <p className='text-lg min-h-48 overflow-hidden'>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
-                                Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
+                            <p className='text-lg max-h-56 overflow-hidden line-clamp-[8]'>
+                                {historyData?.vision}
                             </p>
                         </div>
                         <div className='flex flex-col gap-6 p-4 max-w-[28rem] text-white'>
@@ -73,9 +83,8 @@ const SchoolInfo = () => {
                             <h2 className='text-3xl text-cyan-1 font-bold'>
                                 School Objective
                             </h2>
-                            <p className='text-lg min-h-48 overflow-hidden'>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
-                                Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
+                            <p className='text-lg max-h-56 overflow-hidden line-clamp-[8]'>
+                                {historyData?.objective}
                             </p>
                         </div>
                     </div>
@@ -97,16 +106,12 @@ const SchoolInfo = () => {
                     <h1 className='text-3xl text-blue-2 font-extrabold leading-extra-tight border-b-4 w-fit px-1 py-3 border-cyan-1'>
                         Manager&apos;s Message
                     </h1>
-                    <p className='w-[42rem] my-8 text-lg'>
+                    <p className='w-[42rem] max-h-[26rem] my-8 text-lg line-clamp-[15]'>
                         <span className="text-cyan-1 text-5xl font-bold pr-2"> “</span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt dolore sapiente totam iusto libero provident
-                        enim cupiditate blanditiis, voluptate consequatur pariatur, et id tenetur qui harum culpa alias neque esse!
-                        enim cupiditate blanditiis, voluptate consequatur pariatur, et id tenetur qui harum culpa alias neque esse!
+                        {historyData?.principalMessage?.slice(0, 412)}
                         <br /> <br />
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt dolore sapiente totam iusto libero provident
-                        enim cupiditate blanditiis, voluptate consequatur pariatur, et id tenetur qui harum culpa alias neque esse!
-                        enim cupiditate blanditiis, voluptate consequatur pariatur, et id tenetur qui harum culpa alias neque esse!
-                        <span className="text-cyan-1 text-5xl font-bold m-0"> ”</span>
+                        {historyData?.principalMessage?.slice(412)}
+                        <span className="text-cyan-1 text-4xl font-bold m-0"> ”</span>
                     </p>
                 </div>
             </section>

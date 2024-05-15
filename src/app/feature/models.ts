@@ -73,5 +73,24 @@ const productSchema = new mongoose.Schema({
     { timestamps: true },
 )
 
+const schoolHistorySchema = new mongoose.Schema({
+    history: {
+        type: String,
+    },
+    mission: {
+        type: String,
+    },
+    vision: {
+        type: String,
+    },
+    objective: {
+        type: String,
+    },
+    principalMessage: {
+        type: String,
+    }
+})
+
 export const User = mongoose.models.User || mongoose.model("User", userSchema)
 export const Product = mongoose.models.Product || mongoose.model("Product", productSchema)
+export const SchoolHistory = mongoose.models.SchoolHistory || mongoose.model("SchoolHistory", schoolHistorySchema)

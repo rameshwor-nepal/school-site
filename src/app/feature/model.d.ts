@@ -24,3 +24,11 @@ interface ProductI {
     createdAt?: Date;
     updatedAt?: Date;
 }
+
+interface SchoolHistoryI {
+    history: string;
+    mission: string;
+    vision: string;
+    objective: string;
+    principalMessage: string;
+}
