@@ -35,7 +35,7 @@ const ProgramCard = () => {
                         <h2 className='text-3xl text-blue-1 font-bold'>
                             Early Childhood Education
                         </h2>
-                        <p className='text-lg max-h-56 overflow-hidden'>
+                        <p className='text-lg max-h-56 overflow-hidden pr-6'>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
                             Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
                             Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
@@ -52,7 +52,7 @@ const ProgramCard = () => {
                 </div>
 
                 <div className='flex flex-col md:flex-row items-center '>
-                    <div className='flex-1 w-full h-[30rem] relative mr-14'>
+                    <div className='flex-1 w-full h-[30rem] relative mr-10'>
                         <Image
                             src={'/student.jpg'}
                             alt='hero image'
@@ -67,7 +67,7 @@ const ProgramCard = () => {
                         <h2 className='text-3xl text-blue-1 font-bold'>
                             Basic Level Education
                         </h2>
-                        <p className='text-lg max-h-56 overflow-hidden'>
+                        <p className='text-lg max-h-56 overflow-hidden pr-6'>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
                             Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
                             Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
@@ -84,7 +84,7 @@ const ProgramCard = () => {
                         <h2 className='text-3xl text-blue-1 font-bold'>
                             Secondary Level Education
                         </h2>
-                        <p className='text-lg max-h-56 overflow-hidden'>
+                        <p className='text-lg max-h-56 overflow-hidden pr-6'>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
                             Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
                             Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
