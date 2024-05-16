@@ -91,6 +91,37 @@ const schoolHistorySchema = new mongoose.Schema({
     }
 })
 
+const certificateImageSchema = new mongoose.Schema({
+    image: {
+        type: String,
+    },
+    title: {
+        type: String
+    }
+
+})
+const aboutPageFeatureSchema = new mongoose.Schema({
+    image: {
+        type: String,
+    },
+    title: {
+        type: String
+    }
+
+})
+const faqSchema = new mongoose.Schema({
+    question: {
+        type: String,
+    },
+    answer: {
+        type: String
+    }
+
+})
+
 export const User = mongoose.models.User || mongoose.model("User", userSchema)
 export const Product = mongoose.models.Product || mongoose.model("Product", productSchema)
 export const SchoolHistory = mongoose.models.SchoolHistory || mongoose.model("SchoolHistory", schoolHistorySchema)
+export const CertificateImages = mongoose.models.CertificateImages || mongoose.model("CertificateImages", certificateImageSchema)
+export const AboutPageFeatures = mongoose.models.AboutPageFeatures || mongoose.model("AboutPageFeatures", aboutPageFeatureSchema)
+export const FAQData = mongoose.models.FAQData || mongoose.model("FAQData", faqSchema)

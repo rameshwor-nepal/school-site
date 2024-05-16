@@ -26,9 +26,22 @@ interface ProductI {
 }
 
 interface SchoolHistoryI {
+    id?: string;
     history: string;
     mission: string;
     vision: string;
     objective: string;
     principalMessage: string;
+}
+
+interface CertificateI {
+    id?: string;
+    image: string;
+    title: string;
+}
+
+interface FAQI {
+    id?: string;
+    question: string;
+    answer: string;
 }
