@@ -2,7 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { PiStudentBold } from 'react-icons/pi'
 
-const ProgramCard = () => {
+interface PropI {
+    schoolProgram: {
+        data: FacilitiesI[];
+        message: string;
+    };
+}
+
+const ProgramCard = ({ schoolProgram }: PropI) => {
     return (
         <main className=''>
             {/* what we offer */}
@@ -27,78 +34,69 @@ const ProgramCard = () => {
 
             {/* different program list */}
             <section className='bg-blue-50 lg:py-16 md:py-10 py-8 xl:px-32 md:px-24 px-12 '>
-                <div className='flex flex-col md:flex-row items-center'>
-                    <div className='flex flex-col gap-3  text-gray-1 flex-1'>
-                        <i>
-                            <PiStudentBold size={40} />
-                        </i>
-                        <h2 className='text-3xl text-blue-1 font-bold'>
-                            Early Childhood Education
-                        </h2>
-                        <p className='text-lg max-h-56 overflow-hidden pr-6'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
-                            Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                            Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                        </p>
-                    </div>
-                    <div className='flex-1 w-full h-[30rem] relative'>
-                        <Image
-                            src={'/student.jpg'}
-                            alt='hero image'
-                            fill
-                            className='object-cover rounded-xl'
-                        />
-                    </div>
-                </div>
+                {
+                    schoolProgram && schoolProgram.data.length > 0 ? (
 
-                <div className='flex flex-col md:flex-row items-center '>
-                    <div className='flex-1 w-full h-[30rem] relative mr-10'>
-                        <Image
-                            src={'/student.jpg'}
-                            alt='hero image'
-                            fill
-                            className='object-cover rounded-xl'
-                        />
-                    </div>
-                    <div className='flex flex-col gap-3 text-gray-1 flex-1'>
-                        <i>
-                            <PiStudentBold size={40} />
-                        </i>
-                        <h2 className='text-3xl text-blue-1 font-bold'>
-                            Basic Level Education
-                        </h2>
-                        <p className='text-lg max-h-56 overflow-hidden pr-6'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
-                            Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                            Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                        </p>
-                    </div>
+                        schoolProgram.data.map((el, index) => (
+                            <div className='flex flex-col md:flex-row items-center' key={index}>
+                                {
+                                    index % 2 == 0 ? (
+                                        <>
+                                            <div className='flex flex-col gap-3  text-gray-1 flex-1'>
+                                                <i>
+                                                    <PiStudentBold size={40} />
+                                                </i>
+                                                <h2 className='text-3xl text-blue-1 font-bold'>
+                                                    {el.title}
+                                                </h2>
+                                                <p className='text-lg max-h-56 overflow-hidden pr-6 line-clamp-[8]'>
+                                                    {el.desc}
+                                                </p>
+                                            </div>
+                                            <div className='flex-1 w-full h-[30rem] relative'>
+                                                <Image
+                                                    src={el.image}
+                                                    alt='hero image'
+                                                    fill
+                                                    className='object-cover rounded-xl'
+                                                />
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className='flex-1 w-full h-[30rem] relative mr-10'>
+                                                <Image
+                                                    src={el.image}
+                                                    alt='hero image'
+                                                    fill
+                                                    className='object-cover rounded-xl'
+                                                />
+                                            </div>
+                                            <div className='flex flex-col gap-3  text-gray-1 flex-1'>
+                                                <i>
+                                                    <PiStudentBold size={40} />
+                                                </i>
+                                                <h2 className='text-3xl text-blue-1 font-bold'>
+                                                    {el.title}
+                                                </h2>
+                                                <p className='text-lg max-h-56 overflow-hidden pr-6 line-clamp-[8]'>
+                                                    {el.desc}
+                                                </p>
+                                            </div>
 
-                </div>
+                                        </>
+                                    )
+                                }
 
-                <div className='flex flex-col md:flex-row items-center'>
-                    <div className='flex flex-col gap-3  text-gray-1 flex-1'>
-                        <i>
-                            <PiStudentBold size={40} />
-                        </i>
-                        <h2 className='text-3xl text-blue-1 font-bold'>
-                            Secondary Level Education
-                        </h2>
-                        <p className='text-lg max-h-56 overflow-hidden pr-6'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, temporibus? Nisi, iusto nulla. Fugiat, labore pariatur?
-                            Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                            Ipsum, ipsa eos vel eius id natus sunt repellat, suscipit temporibus maxime laboriosam praesentium.
-                        </p>
-                    </div>
-                    <div className='flex-1 w-full h-[30rem] relative'>
-                        <Image
-                            src={'/student.jpg'}
-                            alt='hero image'
-                            fill
-                            className='object-cover rounded-xl'
-                        />
-                    </div>
-                </div>
+                            </div>
+
+                        ))
+                    ) : (
+                        <h1 className='text-center text-xl font-semibold text-gray-3'>
+                            There is no any school Program
+                        </h1>
+                    )
+                }
             </section>
         </main>
     )

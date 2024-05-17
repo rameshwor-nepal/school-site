@@ -100,6 +100,7 @@ const certificateImageSchema = new mongoose.Schema({
     }
 
 })
+
 const aboutPageFeatureSchema = new mongoose.Schema({
     image: {
         type: String,
@@ -109,6 +110,7 @@ const aboutPageFeatureSchema = new mongoose.Schema({
     }
 
 })
+
 const faqSchema = new mongoose.Schema({
     question: {
         type: String,
@@ -119,9 +121,45 @@ const faqSchema = new mongoose.Schema({
 
 })
 
+const facilitiesSchema = new mongoose.Schema({
+    image: {
+        type: String
+    },
+    title: {
+        type: String
+    },
+    desc: {
+        type: String
+    },
+})
+
+const programSchema = new mongoose.Schema({
+    image: {
+        type: String
+    },
+    title: {
+        type: String
+    },
+    desc: {
+        type: String
+    },
+})
+
+const galleryThumnailSchema = new mongoose.Schema({
+    title: {
+        type: String
+    },
+    image: {
+        title: String
+    },
+})
+
 export const User = mongoose.models.User || mongoose.model("User", userSchema)
 export const Product = mongoose.models.Product || mongoose.model("Product", productSchema)
 export const SchoolHistory = mongoose.models.SchoolHistory || mongoose.model("SchoolHistory", schoolHistorySchema)
 export const CertificateImages = mongoose.models.CertificateImages || mongoose.model("CertificateImages", certificateImageSchema)
 export const AboutPageFeatures = mongoose.models.AboutPageFeatures || mongoose.model("AboutPageFeatures", aboutPageFeatureSchema)
 export const FAQData = mongoose.models.FAQData || mongoose.model("FAQData", faqSchema)
+export const FacilitiesData = mongoose.models.FacilitiesData || mongoose.model("FacilitiesData", facilitiesSchema)
+export const ProgramData = mongoose.models.ProgramData || mongoose.model("ProgramData", programSchema)
+export const GalleryThumnailImages = mongoose.models.GalleryThumnailImages || mongoose.model("GalleryThumnailImages", galleryThumnailSchema)

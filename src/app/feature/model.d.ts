@@ -45,3 +45,15 @@ interface FAQI {
     question: string;
     answer: string;
 }
+
+interface FacilitiesI {
+    image: string;
+    id?: string;
+    title: string;
+    desc: string;
+}
+
+interface GalleryI {
+    title: string;
+    image: string;
+}

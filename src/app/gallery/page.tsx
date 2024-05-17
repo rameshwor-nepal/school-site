@@ -3,8 +3,14 @@ import Footer from '../component/home/Footer'
 import Navbar from '../component/ui/Header/Navbar'
 import SubHeader from '../component/ui/Header/SubHeader'
 import GalleryCard from '../component/ui/card/GalleryCard'
+import { fetchSchoolGalleryThumnail } from '../feature/schoolAbout/galleryImages'
 
-const GalleryPage = () => {
+const GalleryPage = async () => {
+    const response = await fetchSchoolGalleryThumnail();
+    const schoolGallery = await response.json();
+    if (!response) {
+        console.error('Failed to fetch school program data:');
+    }
     return (
         <div>
             <Navbar />
@@ -13,7 +19,16 @@ const GalleryPage = () => {
                 <h1 className='text-3xl text-blue-2 font-extrabold leading-extra-tight border-b-4 w-fit px-1 py-2 border-cyan-1'>
                     Our Memories
                 </h1>
-                <GalleryCard />
+                {
+                    schoolGallery && schoolGallery.data.length > 0 ?
+                        (
+                            <GalleryCard schoolGallery={schoolGallery} />
+                        ) : (
+                            <h1 className='text-center text-xl font-semibold text-gray-3'>
+                                There are no gallery images
+                            </h1>
+                        )
+                }
             </div>
             <Footer />
         </div>
