@@ -13,10 +13,10 @@ const Footer = () => {
                             className="mb-6 bg-white p-6 w-[23.5rem] h-[12rem] overflow-hidden flex flex-col gap-4"
                             data-aos="zoom-in" data-aos-duration="1000"
                         >
-                            <span className="lg:text-3xl text-xl text-blue-2 font-medium">Business Logo</span>
+                            <span className="lg:text-3xl text-xl text-blue-2 font-medium">School Logo</span>
                             <span className="self-center text-gray-1">
-                                Locally owned and operated company with 20 years of industry experience. We value honesty and integrity in all
-                                aspects of the business.
+                                Locally owned and operated school with 20 years of education experience. We value honesty and integrity in all
+                                aspects of the education faclities.
                             </span>
                         </div>
                         <div className='flex gap-8 lg:gap-16'>
@@ -27,13 +27,13 @@ const Footer = () => {
                                         About Us
                                     </li>
                                     <li className="hover:underline cursor-pointer">
-                                        Portfolio
+                                        Facilities
                                     </li>
                                     <li className="hover:underline cursor-pointer">
-                                        Testimonials
+                                        Programs
                                     </li>
                                     <li className="hover:underline cursor-pointer">
-                                        Services
+                                        Gallery
                                     </li>
                                     <li className="hover:underline cursor-pointer">
                                         Contact
@@ -55,25 +55,22 @@ const Footer = () => {
                                     <li className="hover:underline cursor-pointer">
                                         Twitter
                                     </li>
-                                    <li className="hover:underline cursor-pointer">
-                                        LinkedIn
-                                    </li>
                                 </ul>
                             </div>
                             <div>
                                 <h2 className="mb-6 text-2xl text-cyan-1 font-extrabold">Basic Info</h2>
                                 <ul className="text-white space-y-4">
                                     <li className="hover:underline cursor-pointer flex gap-3 items-center">
-                                        <span><FaMapLocationDot size={20} /></span> LaPorte, IN 46350
+                                        <span><FaMapLocationDot size={20} /></span>Kapan, Kathmandu, Nepal
                                     </li>
                                     <li className="hover:underline cursor-pointer flex gap-3 items-center">
-                                        <span><FaPhoneAlt size={20} /></span> (123) 123-1234
+                                        <span><FaPhoneAlt size={20} /></span>  01-4673562
                                     </li>
                                     <li className="hover:underline cursor-pointer flex gap-3 items-center">
-                                        <span><MdMail size={20} /></span> Mon-Fri: 9 am-5 pm
+                                        <span><MdMail size={20} /></span> Sun-Fri: 9 am-5 pm
                                     </li>
                                     <li className="hover:underline cursor-pointer flex gap-3 items-center">
-                                        <span><MdAccessTimeFilled size={20} /></span> yourbusiness@business.com
+                                        <span><MdAccessTimeFilled size={20} /></span> yourschool@school.com
                                     </li>
                                 </ul>
                             </div>

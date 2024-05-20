@@ -7,9 +7,9 @@ const Navbar = () => {
     const [isMobileNavBar, setIsMobileNavBar] = useState<boolean>(false)
     return (
         <>
-            <nav className="lg:px-14 px-10 py-6 flex justify-between items-center text-xl bg-slate-50">
+            <nav className="lg:px-14 px-10 py-6 flex justify-between items-center text-xl bg-transparent">
                 <div className="">
-                    <span className="text-xl sm:text-2xl lg:text-3xl tracking-wider font-medium">Business Logo</span>
+                    <span className="text-xl sm:text-2xl lg:text-3xl tracking-wider font-medium">School Logo</span>
                 </div>
                 <div className='hidden sm:block '>
                     <ul className="flex gap-5 cursor-pointer no-underline">

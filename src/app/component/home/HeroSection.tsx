@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import { FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { MdArrowForward, MdMenu } from 'react-icons/md'
 import Carousel from './ui/Carousel'
 import { ImCross } from 'react-icons/im'
@@ -14,17 +14,17 @@ const HeroSection = () => {
                 <div className="flex justify-between items-center text-sm text-black">
                     <p>
                         <span className="mr-3">
-                            Mon-Fri: 9AM - 5PM
+                            Sun-Fri: 9AM - 5PM
                         </span>
                         <span>
-                            yourbusiness@business.com
+                            yourschool@school.com
                         </span>
                     </p>
 
                     <div className="flex gap-4 text-lg">
                         <FaInstagram />
-                        <FaLinkedinIn />
                         <FaWhatsapp />
+                        <FaFacebook />
                     </div>
 
                 </div>
@@ -32,9 +32,9 @@ const HeroSection = () => {
 
             <section className='  grid grid-cols-12 grid-rows-12 relative'>
                 <div className="col-span-12 row-span-10 h-screen text-white relative">
-                    <div className='absolute h-full w-full z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.9),rgba(55,92,157,0.6))]'></div>
+                    <div className='absolute h-full w-full z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.8),rgba(55,92,157,0.8))]'></div>
                     <Image
-                        src={'/plumbing-home.jpg'}
+                        src={'/school0.jpg'}
                         alt='hero image'
                         fill
                         className='object-cover'
@@ -42,38 +42,38 @@ const HeroSection = () => {
                     <div className='absolute z-20'>
                         <nav className="lg:px-14 px-10 py-6 flex justify-between items-center">
                             <div className="">
-                                <span className="text-xl sm:text-2xl lg:text-3xl tracking-wider font-medium">Business Logo</span>
+                                <span className="text-xl sm:text-2xl lg:text-3xl tracking-wider font-medium">School Logo</span>
                             </div>
                             <div className='hidden sm:block '>
                                 <ul className="flex gap-5 cursor-pointer no-underline">
                                     <a href="/">
-                                        <li>
+                                        <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                             Home
                                         </li>
                                     </a>
                                     <a href="/about">
-                                        <li>
+                                        <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                             About
                                         </li>
                                     </a>
                                     <a href="/facilities">
-                                        <li>
+                                        <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                             Facilities
                                         </li>
                                     </a>
                                     <a href="/program">
-                                        <li>
+                                        <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                             Program
                                         </li>
                                     </a>
                                     <a href="/gallery">
-                                        <li>
+                                        <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                             Gallery
                                         </li>
                                     </a>
 
                                     <a href="/contact">
-                                        <li>
+                                        <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                             Contact
                                         </li>
                                     </a>
@@ -86,18 +86,18 @@ const HeroSection = () => {
                             </div>
                         </nav>
                         <div className=" flex justify-between  items-center mt-24  xl:px-32 lg:px-24 sm:px-16 px-12">
-                            <div className="w-[39rem]">
+                            <div className="w-[42rem]">
                                 <p className="md:pb-4 pb-3 text-lg">
-                                    Building with Confidence
+                                    Empowering Tomorrow's Leaders
                                 </p>
                                 <h1
-                                    className="text-5xl md:text-[80px] lg:text-[90px] leading-extra-tight font-bold"
+                                    className="text-5xl md:text-[80px] leading-extra-tight font-bold"
                                     data-aos="fade-right" data-aos-duration="500"
                                 >
-                                    Building and Maintaining Your Dreams
+                                    Dream Big, <br /> Build Strong, Succeed Always
                                 </h1>
                                 <p>
-                                    Fast, Friendly home repair service done right the first time!!
+                                    Passionate, Personalized Education for Every Student's Journey
                                 </p>
                                 <button
                                     className="md:py-5 md:px-10 py-4 px-8 text-lg bg-white text-blue-2 font-bold flex items-center gap-2 mt-8 mb-20"
@@ -124,7 +124,7 @@ const HeroSection = () => {
                 <div className="bg-cyan-1 col-span-12 row-span-2 lg:pt-14 pt-10 xl:px-32 lg:px-24 sm:px-12 px-12">
                     <p data-aos="zoom-in" data-aos-duration="500"
                         className="lg:text-5xl text-xl sm:3xl font-extrabold text-white">
-                        20% Year of Experience
+                        20+ Years of Experience
                     </p>
                 </div>
             </section>
@@ -138,22 +138,22 @@ const HeroSection = () => {
                             <span className="text-2xl lg:text-3xl tracking-wider font-medium">Business Logo</span>
                         </div>
                         <ul className="flex flex-col gap-5 no-underline text-xl">
-                            <li>
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                 Home
                             </li>
-                            <li>
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                 About
                             </li>
-                            <li>
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                 Facilities
                             </li>
-                            <li>
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                 Projects
                             </li>
-                            <li>
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                 Gallery
                             </li>
-                            <li>
+                            <li className="hover:scale-105 transition-transform duration-300 ease-in-out ">
                                 Contact
                             </li>
                         </ul>

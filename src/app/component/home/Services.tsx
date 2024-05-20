@@ -1,7 +1,10 @@
+"use client"
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { MdArrowForward } from 'react-icons/md'
 
 const Services = () => {
+    const router = useRouter();
     return (
         <main className='text-gray-1 relative'>
             <div className='flex w-full h-[50rem] absolute z-[-10]'>
@@ -16,10 +19,11 @@ const Services = () => {
                         <p className='w-20 h-[2px] bg-cyan-1 '></p>
                     </div>
                     <h1 className='lg:text-6xl text-4xl text-blue-2 font-extrabold leading-extra-tight my-3'>
-                        Our Services
+                        Our Offerings
                     </h1>
                     <p className='text-gray-1'>
-                        No job is too big or too small for the crew at Your Business Name LLC
+
+                        We deeply care for each and every student&apos;s growth and well-being.
                     </p>
                 </div>
                 <div className='grid grid-cols-12 gap-6 mt-6 z-10'>
@@ -27,17 +31,17 @@ const Services = () => {
                         className='lg:col-span-5 md:col-span-6  col-span-12 p-6 border-solid border-2 border-cyan-1 relative bg-white'
                         data-aos="fade-right" data-aos-duration="1000"
                     >
-                        <h4 className='text-blue-2 text-3xl my-2 '>Plumbing</h4>
+                        <h4 className='text-blue-2 text-3xl my-2 '>Well-Equipped Classroom</h4>
                         <p className=''>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem eum rem,
                             minima praesentium ab deserunt repellat corrupti? Quod unde illo tempora consequatur voluptate
                             voluptatem necessitatibus, voluptas sequi delectus itaque.
                         </p>
                         <button className="text-lg text-cyan-1 flex items-center float-right gap-1 mt-3">
-                            <span>
+                            <span onClick={() => router.push('/facilities')}>
                                 Read More
                             </span>
-                            <span>
+                            <span className='transition-all hover:scale-[1.2]'>
                                 <MdArrowForward size={20} />
                             </span>
                         </button>
@@ -49,17 +53,17 @@ const Services = () => {
                         className='lg:col-span-5 md:col-span-6   col-span-12 p-6 border-solid border-2 border-cyan-1 relative bg-white'
                         data-aos="fade-left" data-aos-duration="1000"
                     >
-                        <h4 className='text-blue-2 text-3xl my-2 '>Water Treatment</h4>
+                        <h4 className='text-blue-2 text-3xl my-2 '>Comprehensive Library</h4>
                         <p className=''>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem eum rem,
                             minima praesentium ab deserunt repellat corrupti? Quod unde illo tempora consequatur voluptate
                             voluptatem necessitatibus, voluptas sequi delectus itaque.
                         </p>
                         <button className="text-lg text-cyan-1 flex items-center float-right gap-1 mt-3">
-                            <span>
+                            <span onClick={() => router.push('/facilities')}>
                                 Read More
                             </span>
-                            <span>
+                            <span className='transition-all hover:scale-[1.2]'>
                                 <MdArrowForward size={20} />
                             </span>
                         </button>
@@ -70,17 +74,17 @@ const Services = () => {
                     <div className='md:col-span-6 col-span-12 p-6 border-solid border-2 border-cyan-1 relative bg-white'
                         data-aos="fade-right" data-aos-duration="1000"
                     >
-                        <h4 className='text-blue-2 text-3xl my-2 '>Commercial Property Maintenance</h4>
+                        <h4 className='text-blue-2 text-3xl my-2 '>Fully Equipped liboratory</h4>
                         <p className=''>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem eum rem,
                             minima praesentium ab deserunt repellat corrupti? Quod unde illo tempora consequatur voluptate
                             voluptatem necessitatibus, voluptas sequi delectus itaque.
                         </p>
                         <button className="text-lg text-cyan-1 flex items-center float-right gap-1 mt-3">
-                            <span>
+                            <span onClick={() => router.push('/facilities')}>
                                 Read More
                             </span>
-                            <span>
+                            <span className='transition-all hover:scale-[1.2]'>
                                 <MdArrowForward size={20} />
                             </span>
                         </button>
@@ -92,17 +96,17 @@ const Services = () => {
                         className='md:col-span-6 col-span-12 p-6 border-solid border-2 border-cyan-1 relative bg-white'
                         data-aos="fade-left" data-aos-duration="1000"
                     >
-                        <h4 className='text-blue-2 text-3xl my-2 '>Preventative Maintenance</h4>
+                        <h4 className='text-blue-2 text-3xl my-2 '>Spacious Playground</h4>
                         <p className=''>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem eum rem,
                             minima praesentium ab deserunt repellat corrupti? Quod unde illo tempora consequatur voluptate
                             voluptatem necessitatibus, voluptas sequi delectus itaque.
                         </p>
                         <button className="text-lg text-cyan-1 flex items-center float-right gap-1 mt-3">
-                            <span>
+                            <span onClick={() => router.push('/facilities')}>
                                 Read More
                             </span>
-                            <span>
+                            <span className='transition-all hover:scale-[1.2]'>
                                 <MdArrowForward size={20} />
                             </span>
                         </button>

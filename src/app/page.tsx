@@ -8,8 +8,8 @@ import Testimonials from "./component/home/Testimonials";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-blue-600">
+    <>
+      <div className="text-blue-600">
         <HeroSection />
         <About />
         <Services />
@@ -17,7 +17,7 @@ export default function Home() {
         <Testimonials />
         <Contact />
         <Footer />
-      </h1>
-    </div>
+      </div>
+    </>
   )
 }

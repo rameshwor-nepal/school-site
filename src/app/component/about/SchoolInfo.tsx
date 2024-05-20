@@ -118,7 +118,7 @@ const SchoolInfo = ({ schoolHistory, certificateImages, schoolFeatures, faqData 
                 <div></div>
                 <div className='h-96 w-[30rem] relative '>
                     <Image
-                        src={'/man-2.jpg'}
+                        src={'/principal.jpg'}
                         alt='principal image'
                         fill
                         className='object-cover rounded-xl'

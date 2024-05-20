@@ -20,16 +20,16 @@ const Carousel = () => {
             <div id="default-carousel" className="relative w-full" data-carousel="slide">
                 <div className="relative h-56 md:h-[40rem]">
                     <div className={` duration-800 ease-in-out opacity-${activeSlide === 0 ? '100' : '0'} transition-opacity`} data-carousel-item style={{ display: activeSlide === 0 ? 'block' : 'none' }}>
-                        <Image src={"/plumbing-hero.jpg"} fill objectFit='cover' alt="..." />
+                        <Image src={"/boys.jpg"} fill alt="..." className='object-cover' />
                     </div>
                     <div className={`duration-800 ease-in-out opacity-${activeSlide === 1 ? '100' : '0'} transition-opacity`} data-carousel-item style={{ display: activeSlide === 1 ? 'block' : 'none' }}>
-                        <Image src={"/PLUMBING.jpg"} fill objectFit='cover' alt="..." />
+                        <Image src={"/handwriting.jpg"} fill alt="..." className='object-cover' />
                     </div>
                     <div className={`duration-800 ease-in-out opacity-${activeSlide === 2 ? '100' : '0'} transition-opacity`} data-carousel-item style={{ display: activeSlide === 2 ? 'block' : 'none' }}>
-                        <Image src={"/watertreatment.jpg"} fill objectFit='cover' alt="..." />
+                        <Image src={"/dancing.jpg"} fill alt="..." className='object-cover' />
                     </div>
                     <div className={`duration-800 ease-in-out opacity-${activeSlide === 3 ? '100' : '0'} transition-opacity`} data-carousel-item style={{ display: activeSlide === 3 ? 'block' : 'none' }}>
-                        <Image src={"/plumbing-home.jpg"} fill objectFit='cover' alt="..." />
+                        <Image src={"/computer-lab.jpeg"} fill alt="..." className='object-cover' />
                     </div>
                 </div>
                 <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
