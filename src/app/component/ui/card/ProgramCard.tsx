@@ -53,7 +53,7 @@ const ProgramCard = ({ schoolProgram }: PropI) => {
                                                     {el.desc}
                                                 </p>
                                             </div>
-                                            <div className='flex-1 w-full h-[30rem] relative'>
+                                            <div className='flex-1 w-full h-[30rem] relative' data-aos="fade-left">
                                                 <Image
                                                     src={el.image}
                                                     alt='hero image'
@@ -64,7 +64,7 @@ const ProgramCard = ({ schoolProgram }: PropI) => {
                                         </>
                                     ) : (
                                         <>
-                                            <div className='flex-1 w-full h-[30rem] relative mr-10'>
+                                            <div className='flex-1 w-full h-[30rem] relative mr-10' data-aos="fade-right">
                                                 <Image
                                                     src={el.image}
                                                     alt='hero image'

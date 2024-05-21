@@ -46,13 +46,13 @@ const About = () => {
                             developing well-rounded individuals, to ensures that every student has the opportunity to explore their interests and talents.
                         </p>
                         <button
-                            className="md:py-5 md:px-10 py-4 px-8 text-lg bg-blue-2 text-white font-bold flex items-center gap-2 mt-12"
+                            className="md:py-5 md:px-10 py-4 px-8 text-lg bg-blue-2 w-[13rem] text-white font-bold flex items-center gap-2 mt-12 transition-all hover:gap-3"
                             data-aos="zoom-in" data-aos-duration="1000"
                         >
-                            <span onClick={() => router.push('/about')} className='transition-all hover:scale-[1.05]'>
+                            <span onClick={() => router.push('/about')}>
                                 Read More
                             </span>
-                            <span className='transition-all hover:scale-[1.2]'>
+                            <span>
                                 <MdArrowForward size={20} />
                             </span>
                         </button>

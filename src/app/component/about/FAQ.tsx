@@ -19,7 +19,9 @@ const FAQ = ({ faqData }: { faqData: FAQI[] }) => {
                 {
                     faqData && faqData.length > 0 ? (
                         faqData.map((el) => (
-                            <details className="group border-s-4 border-blue-3 bg-blue-50 px-6 py-3" key={el.id}>
+                            <details className="group border-s-4 border-blue-3 bg-blue-50 px-6 py-3" key={el.id}
+                                data-aos="fade-left"
+                            >
                                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                                     <h2 className="text-lg font-medium text-gray-900">
                                         {el?.question || ''}

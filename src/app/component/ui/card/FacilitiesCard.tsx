@@ -13,7 +13,8 @@ const FacilitiesCard = ({ image, title, body }: PropsI) => {
     const [openModal, setOpenModal] = useState(false)
     return (
         <>
-            <div className='flex gap-4 h-fit items-center relative border-solid border-2 border-cyan-1 rounded-xl bg-white p-4 sm:p-6 shadow-lg transition hover:shadow-xl'>
+            <div className='flex gap-4 h-fit items-center relative border-solid border-2 border-cyan-1 rounded-xl bg-white p-4 sm:p-6 shadow-lg transition hover:shadow-xl'
+            >
                 <div className='w-96 h-32 relative'>
                     <Image
                         src={`${image}`}

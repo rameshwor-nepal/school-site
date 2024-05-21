@@ -17,6 +17,7 @@ const GalleryCard = ({ schoolGallery }: PropsI) => {
                         <div
                             className="h-56 rounded-xl cursor-pointer relative hover:scale-[1.03] transition duration-300 ease-in-out"
                             key={index}
+                            data-aos="zoom-in"
                         >
                             <div
                                 className="absolute z-20 h-full w-full rounded-xl bg-[linear-gradient(to_top,rgba(55,92,157,0.1),rgba(22,33,84,0.8))] opacity-0 transition duration-300 ease-in-out hover:opacity-70">
