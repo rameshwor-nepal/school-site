@@ -90,7 +90,7 @@ const HeroSection = () => {
                         <div className=" flex justify-between  items-center mt-24  xl:px-32 lg:px-24 sm:px-16 px-12">
                             <div className="w-[42rem]">
                                 <p className="md:pb-4 pb-3 text-lg">
-                                    Empowering Tomorrow's Leaders
+                                    Empowering Tomorrow&apos;s  Leaders
                                 </p>
                                 <h1
                                     className="text-5xl md:text-[80px] leading-extra-tight font-bold"
@@ -98,7 +98,7 @@ const HeroSection = () => {
                                     Dream Big, <br /> Build Strong, Succeed Always
                                 </h1>
                                 <p>
-                                    Passionate, Personalized Education for Every Student's Journey
+                                    Passionate, Personalized Education for Every Student&apos;s  Journey
                                 </p>
                                 <button
                                     className="md:py-5 md:px-10 py-4 px-8 text-lg w-56 bg-white text-blue-2 font-bold flex items-center gap-2 mt-8 mb-20 transition-all hover:gap-3"

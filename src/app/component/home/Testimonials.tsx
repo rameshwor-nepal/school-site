@@ -43,7 +43,7 @@ const Testimonials = () => {
                                         <FaQuoteLeft />
                                     </div>
                                     <p className='text-white text-xl max-h-[12rem] overflow-hidden pb-6'>
-                                        As a parent, I couldn't be more pleased with the education and care my child receives at this school.
+                                        As a parent, I couldn&apos;t be more pleased with the education and care my child receives at this school.
                                         The dedicated teachers and staff go above and beyond to ensure that every student feels valued and supported.
                                         We are grateful to be part of such a wonderful community where our child can thrive and succeed.
                                     </p>
