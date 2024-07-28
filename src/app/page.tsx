@@ -5,10 +5,12 @@ import Footer from "./component/home/Footer";
 import HeroSection from "./component/home/HeroSection";
 import Services from "./component/home/Services";
 import Testimonials from "./component/home/Testimonials";
+import NewHomePage from "./component/new-home/NewHomePage";
 
 export default function Home() {
   return (
     <>
+    {/* <NewHomePage /> */}
       <div className="text-blue-600">
         <HeroSection />
         <About />
