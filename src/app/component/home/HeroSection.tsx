@@ -12,6 +12,7 @@ const HeroSection = () => {
     const router = useRouter();
     return (
         <>
+            {/* upper navbar */}
             <section className="bg-cyan-1 py-3 lg:px-14 px-10">
                 <div className="flex justify-between items-center text-sm text-black">
                     <p>
@@ -32,15 +33,20 @@ const HeroSection = () => {
                 </div>
             </section>
 
+            {/* main hero section */}
             <section className='  grid grid-cols-12 grid-rows-12 relative'>
                 <div className="col-span-12 row-span-10 h-screen text-white relative">
-                    <div className='absolute h-full w-full z-10 bg-[linear-gradient(to_bottom,rgba(22,33,84,0.8),rgba(55,92,157,0.8))]'></div>
-                    <Image
+                    <div className='absolute h-screen w-full z-10 bg-[linear-gradient(to_right,rgba(22,33,84,0.8),rgba(55,92,157,0.6))]'>
+                    </div>
+                    <div className='absolute z-0 h-screen w-full'>
+                        <Carousel />
+                    </div>
+                    {/* <Image
                         src={'/school0.jpg'}
                         alt='hero image'
                         fill
                         className='object-cover'
-                    />
+                    /> */}
                     <div className='absolute z-20'>
                         <nav className="lg:px-14 px-10 py-6 flex justify-between items-center">
                             <div className="">
@@ -116,12 +122,11 @@ const HeroSection = () => {
                         </div>
                     </div>
                 </div>
-                <div
+                {/* <div
                     className="hidden lg:block xl:w-[27rem] xl:h-[40rem] w-[20rem] h-[25rem] top-48 right-3 z-10 absolute  xl:right-32"
                 >
-                    {/* <Image src={'/PLUMBING.jpg'} alt="image1" fill objectFit='cover' /> */}
                     <Carousel />
-                </div>
+                </div> */}
                 <div className="bg-cyan-1 col-span-12 row-span-2 lg:pt-14 pt-10 xl:px-32 lg:px-24 sm:px-12 px-12">
                     <p data-aos="fade-right" data-aos-duration="500"
                         className="lg:text-5xl text-xl sm:3xl font-extrabold text-white">
